@@ -1,5 +1,6 @@
 <script>
     import "../app.css";
+    import { enhance } from "$app/forms";
 
     export let data;
 </script>
@@ -21,6 +22,9 @@
             <a href="about" class="btn btn-ghost btn-sm rounded-btn">
                 About
             </a>
+            {#if data.session.session}
+                <a class="btn btn-ghost btn-sm rounded-btn" href="profile">Profile</a>
+            {/if}
         </div>
     </div>
     {#if !data.session.session}

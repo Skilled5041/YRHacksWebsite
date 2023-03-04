@@ -1,4 +1,11 @@
-<form action="?/register" method="POST" class="card top-24 items-center">
+<script>
+    import {enhance} from "$app/forms";
+    import { redirect } from "@sveltejs/kit";
+
+    export let data;
+</script>
+
+<form action="?/register" method="POST" class="card top-24 items-center" use:enhance>
     <label class="text-2xl mb-4 w-80">
         Username
         <input type="text" name="username" placeholder="Username" class="input input-bordered w-full max-w-xs"/>

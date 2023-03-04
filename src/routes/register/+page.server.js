@@ -1,6 +1,13 @@
 import { AuthError } from "@supabase/supabase-js";
 import { fail, redirect } from "@sveltejs/kit";
 
+export const load = async ({locals}) => {
+    const session = await locals.getSession();
+    if (session) {
+        throw redirect(303, "/");
+    }
+    return {};
+    }
 export const actions = {
     register: async ({request, locals}) => {
 
