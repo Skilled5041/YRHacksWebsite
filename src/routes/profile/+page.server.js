@@ -17,12 +17,8 @@ export const load = async ({locals}) => {
         .select("points")
         .eq("id", session.user.id);
 
-    if (err) {
-        return {problemsSolved: 'Error loading data'};
-    }
-
     return {
-        problemsSolved: problemsSolved[0].problems_solved,
-        points: points[0].points
+        problemsSolved: (!err) ? problemsSolved[0].problems_solved : 'Error loading problems solved',
+        points: (!err2) ? points[0].points : 'Error loading points'
     };
 };
