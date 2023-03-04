@@ -1,21 +1,21 @@
-import {AuthError} from "@supabase/supabase-js";
-import {fail, redirect} from "@sveltejs/kit";
+import { AuthError } from "@supabase/supabase-js";
+import { fail, redirect } from "@sveltejs/kit";
 
 export const actions = {
-    register: async ({request, locals}) => {
+    login: async ({request, locals}) => {
 
         const data = await request.formData();
 
-        const {error: err} = await locals.supabase.auth.signUp({
-            email: data.get('email'),
-            password: data.get('password')
+        const {error: err} = await locals.supabase.auth.signInWithPassword({
+            email: data.get("email"),
+            password: data.get("password")
         });
 
         if (err) {
             if (err instanceof AuthError && err.status !== 500) {
                 console.log(err)
                 return {
-                    status: 400, error: 'Invalid email or password'
+                    status: 400, error: 'Invalid credentials'
                 };
             }
             console.log(err)
@@ -23,5 +23,6 @@ export const actions = {
         }
 
         throw redirect(303, "/");
+
     }
 };

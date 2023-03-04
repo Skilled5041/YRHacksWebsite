@@ -1,5 +1,7 @@
 <script>
     import "../app.css";
+
+    export let data;
 </script>
 
 <div class="navbar mb-2 shadow-lg">
@@ -21,14 +23,22 @@
             </a>
         </div>
     </div>
-    <div class="navbar-end px-8">
-        <button class="btn btn-sm btn-primary mx-4">
-            <a href="login">Login</a>
-        </button>
-        <button class="btn btn-sm btn-primary mx-4">
-            <a href="register">Register</a>
-        </button>
-    </div>
+    {#if !data.session.session}
+        <div class="navbar-end px-8">
+            <button class="btn btn-sm btn-primary mx-4">
+                <a href="login">Login</a>
+            </button>
+            <button class="btn btn-sm btn-primary mx-4">
+                <a href="register">Register</a>
+            </button>
+        </div>
+    {:else}
+        <div class="navbar-end px-8">
+            <form action="/logout" method="POST">
+                <button class="btn btn-sm btn-primary mx-4">Logout</button>
+            </form>
+        </div>
+    {/if}
 </div>
 
 <div class="max-w-xl mx-auto py-8 px-4 items-center">

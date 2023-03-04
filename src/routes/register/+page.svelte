@@ -1,7 +1,3 @@
-<script>
-
-</script>
-
 <form action="?/register" method="POST" class="card top-24 items-center">
     <label class="text-2xl mb-4 w-80">
         Email

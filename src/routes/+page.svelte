@@ -1,9 +1,9 @@
 <script>
-    export let session;
+    export let data;
 </script>
 
-{#if !session}
-    <h1>Not logged in</h1>
+{#if data.session.session}
+    <h1 class="text-3xl font-bold">Welcome, {data.session.session.user.email}</h1>
 {:else}
-    <h1>Logged in as {session.user.email}</h1>
+    <h1 class="text-3xl font-bold">Welcome, Guest</h1>
 {/if}
