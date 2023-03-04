@@ -1,11 +1,10 @@
 <script>
     import "../app.css";
-    import { enhance } from "$app/forms";
 
     export let data;
 </script>
 
-<div class="navbar mb-2 bg-base-200 300 shadow-lg">
+<div class="navbar mb-2 bg-base-200 300 shadow-lg fixed">
     <div class="px-2 mx-2 mb-4 navbar-start">
         <a href="/" class="ml-4 text-lg font-bold">
             <img src="src/imgs/logo.png" class="w-16 mt-4 px-4" alt="Contest Ace">
