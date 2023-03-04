@@ -31,6 +31,6 @@
     </div>
 </div>
 
-<div class="mx-auto py-16 px-4 text-center bg">
+<div class="max-w-xl mx-auto py-8 px-4 items-center">
     <slot/>
 </div>
