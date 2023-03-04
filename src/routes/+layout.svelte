@@ -5,9 +5,9 @@
 </script>
 
 <div class="navbar mb-2 shadow-lg">
-    <div class="px-2 mx-2 navbar-start">
-        <a href="/" class="text-lg font-bold">
-            name
+    <div class="px-2 mx-2 mb-4 navbar-start">
+        <a href="/" class="ml-4 text-lg font-bold">Contest Ace
+            <a class="text-4xl">💯</a>
         </a>
     </div>
     <div class="hidden px-2 mx-2 navbar-center lg:flex">
