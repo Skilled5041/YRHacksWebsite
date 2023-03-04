@@ -1,3 +1,9 @@
-<script></script>
+<script>
+    export let session;
+</script>
 
-<h1>Home page</h1>
+{#if !session}
+    <h1>Not logged in</h1>
+{:else}
+    <h1>Logged in as {session.user.email}</h1>
+{/if}
